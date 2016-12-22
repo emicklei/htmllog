@@ -97,7 +97,7 @@ func (l *Logger) Event(level string, format string, args ...interface{}) {
 
 // Level writes the log level. Must be called in a protected region.
 func (l *Logger) Level(level string) {
-	l.Div(level, func() { l.Raw("[" + l.Nbsp(level, 5) + "]") })
+	l.Div(level, func() { l.Raw(l.Nbsp(level, 5)) })
 }
 
 func (l *Logger) Reset() error {
